@@ -2,7 +2,7 @@ let currentDate= new Date();
 
 let Day =currentDate.getDate();
 
-let Month=currentDate.getMonth();
+let Month=currentDate.getMonth()+1;
 
 let Year=currentDate.getFullYear();
 
@@ -26,6 +26,10 @@ async  function weather(city){
 
     var parsedata=await data.json();
 
+    console.log(parsedata);
+
+  
+
 
     if(data.status=='404'){
 
@@ -37,7 +41,7 @@ document.querySelector(".weather").style.display="none";
     
 
  
-
+  
    
 
 document.querySelector('.cityName').innerHTML=parsedata.name;
@@ -47,42 +51,38 @@ document.querySelector('.p1').innerHTML=parsedata.main.pressure+"Pa";
 document.querySelector('.w1').innerHTML=parsedata.wind.speed+"km/h";
 
 
-if(parsedata.weather[0].main=="Cloud"){
+switch (parsedata.weather[0].main) {
+    case "Clouds":
 
-    weatherIcon.src="./Images/clouds.png"
+   
+        weatherIcon.src = "./Images/clouds.png";
+        discription.innerHTML = "Cloud";
+        break;
+    case "Rain":
+        weatherIcon.src = "./Images/rain.png";
+        discription.innerHTML = "Rain";
+        break;
+    case "Clear":
+        weatherIcon.src = "./Images/clear.png";
+        discription.innerHTML = "Clear";
+        break;
+    case "Drizzle":
+        weatherIcon.src = "./Images/drizzle.png";
+        discription.innerHTML = "Drizzle";
+        break;
+    case "Snow":
+        weatherIcon.src = "./Images/snow.png";
+        discription.innerHTML = "Snow";
 
-    discription.innerHTML="Cloud"
-
+        case "Mist":
+            weatherIcon.src = "./Images/mist.png";
+            discription.innerHTML = "Mist";
     
-}
 
-else if(parsedata.weather[0].main=="Rain"){
-
-    weatherIcon.src="./Images/rain.png"
-
-    discription.innerHTML="Rain"
-}
-
-else if(parsedata.weather[0].main=="Clear"){
-
-    weatherIcon.src="./Images/clear.png"
-
-    discription.innerHTML="Clear"
-}
-
-
-else if(parsedata.weather[0].main=="Drizzle"){
-
-    weatherIcon.src="./Images/drizzle.png"
-
-    discription.innerHTML="Drizzle"
-}
-
-else if(parsedata.weather[0].main=="Snow"){
-
-    weatherIcon.src="./Images/snow.png"
-
-    discription.innerHTML="Snow"
+        break;
+    default:
+        weatherIcon.src = ""; // Set a default image or leave it empty if no match
+        discription.innerHTML = "Unknown";
 }
 
 

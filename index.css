@@ -1,219 +1,167 @@
-*{
-
-
-    margin:0;
-
+* {
+    margin: 0;
     padding: 0;
-
     font-family: sans-serif;
-
     box-sizing: border-box;
 }
 
-.container{
-
+.container {
     background-color: rgba(4, 25, 32, 0.474);
-
-    width:100%;
-
+    width: 100%;
     height: 100vh;
+    display: flex;
+    align-items: center;
+   justify-content: center;
 
-    justify-content: center;
+    flex-direction: column;
+}
 
+.card {
+    margin: 50px auto 0;
+    width: 90%;
+    max-width: 470px;
+    background: linear-gradient(135deg, #73e9ca, #6755e0);
+    color: #fff;
+    border-radius: 20px;
+    border: solid black 1.5px;
+    display: flex;
+  
+
+    flex-direction: column;
   align-items: center;
 
-    display: flex;
+    padding: 10PX;
+    
 }
 
-.card{
-
-    margin :100px auto 0;
-
-
-    width:100%;
-
+.search {
+    margin: 20px 10px;
+    width: 90%;
    
-
-   
-
-    max-width: 400px;
-background: linear-gradient(135deg,#00feba ,#5b548a);
-
-color:#fff;
-
-
-
-    border-radius: 20px;
-
-    border:solid black 1.5px;
-
-    text-align: center;
-}
-
-.search{
-
-    margin :20px 10px;
-
- width: 100%;
-
- max-width: 350px;
-
-
-
-align-items: center;    
-
-justify-content: space-between;
-
     display: flex;
+    align-items: center;
+  
 }
 
 .search input {
-
+   width: 70%;
     border: 0;
-
     outline: 0;
-
     background: #ebfffc;
-
-    color:#555;
-padding: 15px 25px;
-  
-
-
+    color: #555;
+    padding: 20px 20px;
     border-radius: 30px;
 
     flex: 1;
+    font-size: 18px;
 
-    margin-right:10px;
-
-    font-size:20px;
-
-
-
-
-
+    margin-right: 10px;
 }
 
 .search button {
-
     border: 0;
-
-    outline:0;
-
+    outline: 0;
     border-radius: 50%;
-
     cursor: pointer;
-
-    
-padding: 15px;
+    padding: 15px;
 }
 
-.search button img{
-
-    width: 20px;
+.search button img {
+    width: 15px;
 }
 
-.weather-icon{
-
-
-    width:150px;
-
-    margin-top:30px;
+.weather-icon {
+    width: 100px;
+    margin-top: 20px;
 }
 
-.disc{
-
-    font-size: 30px;
-
-    font-weight: 200px;
-
-    margin:5px 0;
-
+.disc {
+    font-size: 20px;
+    font-weight: 200;
+    margin: 8px 0;
 }
 
-.temp{
+.temp {
+    font-size: 35px;
+    font-weight: 600;
+}
 
-    font-size:50px;
-
+.cityName {
+    font-size: 35px;
     font-weight: 500;
+    margin: 10px 0;
+}
 
+.detail {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+   
+    margin-top: 30px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+.col img {
+    width: 25px;
+    margin-left: 15px;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.w1, .h1, .p1 {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.w2, .h2, .p2 {
+    margin-top: 2px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+
+.weather, .error {
+    text-align: center;
+    margin: 15px;
+    font-size: 20px;
+
+    display: none;
+  
+
+
+}
+
+/* Media Queries for Responsive Design */
+
+@media only screen and (min-width: 400px) {
+    .search input {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .card {
+        margin: 100px auto 0;
+        width: 80%;
+    }
    
 }
 
-.cityName{
-
-    font-size:50px;
-
-    font-weight: 400;
-
-    margin:10px 0;
+@media only screen and (min-width: 992px) {
+    .card {
+        width: 60%;
+    }
 }
 
-.detail{
-
-    display:flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    margin-top: 50px ;
-
-    padding:0 20px;
-
-    margin-bottom: 20px;
-}
-
-.col img{
-
-    width:30px;
-
-    margin-right: 10px;
-
-
-}
-
-.col{
-
-    display:flex;
-
-
-    align-items: center;
-
-    text-align: left;
-
-
-}
-
-.w1,.h1,.p1{
-
-    font-size: 10px;
-
-    font-weight: 400;
-}
-
-.w2,.h2,.p2{
-
-    margin-top:2px;
-
-    font-size:15px;
-
-    font-weight: 500;
-}
-
-.weather{
-
-    display: none;
-}
-
-.error{
-
-    text-align: left;
-
-    margin: 15px;
-
-  
-
-    font-size: 15px;
-    display: none;
+@media only screen and (min-width: 1200px) {
+    .card {
+        width: 50%;
+    }
 }
